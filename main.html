@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Дана — одно письмо</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --cream: #f5f0e8;
+      --text: #2c2a26;
+      --text-soft: #5c574f;
+      --accent: #c17f59;
+      --accent-soft: #e8d5c9;
+      --white: #fff;
+      --shadow: rgba(44, 42, 38, 0.08);
+      --shadow-strong: rgba(44, 42, 38, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .page {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 28px 24px 48px;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 24px 0 40px;
+    }
+
+    .hero .label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 8vw, 3rem);
+      font-weight: 600;
+      margin: 0 0 8px;
+      color: var(--text);
+      line-height: 1.15;
+    }
+
+    .hero .sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    /* Block */
+    .block {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 24px var(--shadow);
+    }
+
+    .block h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 14px;
+      color: var(--text);
+    }
+
+    .block p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-soft);
+    }
+
+    .block p + p {
+      margin-top: 12px;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Date card */
+    .date-card {
+      background: linear-gradient(145deg, var(--accent-soft) 0%, #f0e6de 100%);
+      border-radius: 20px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-bottom: 20px;
+      border: 1px solid rgba(193, 127, 89, 0.2);
+    }
+
+    .date-card .day {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 4px;
+    }
+
+    .date-card .detail {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    /* CTA */
+    .cta-wrap {
+      text-align: center;
+      padding: 20px 0 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--white);
+      background: var(--accent);
+      padding: 16px 36px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(193, 127, 89, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta:active {
+      transform: scale(0.98);
+    }
+
+    .foot-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-top: 24px;
+      padding: 0 16px;
+    }
+
+    /* Decorative */
+    .petal {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .petal-1 { top: 15%; left: 8%; }
+    .petal-2 { top: 25%; right: 5%; }
+    .petal-3 { bottom: 30%; left: 10%; }
+    .petal-4 { bottom: 20%; right: 12%; }
+  </style>
+</head>
+<body>
+
+  <div class="petal petal-1"></div>
+  <div class="petal petal-2"></div>
+  <div class="petal petal-3"></div>
+  <div class="petal petal-4"></div>
+
+  <main class="page">
+    <section class="hero">
+      <p class="label">одно письмо</p>
+      <h1>Дана</h1>
+      <p class="sub">ты — та, о ком я думаю</p>
+    </section>
+
+    <div class="block">
+      <h2>Я знаю</h2>
+      <p>
+        Ты уже говорила нет. Не раз. И что шанса ты не даёшь — я тоже знаю. Я не пришёл просить в сотый раз.
+      </p>
+      <p>
+        Я пришёл сказать один раз — честно и вслух: ты мне не безразлична. Я бы отдал многое за один вечер, когда мы просто сидим напротив и разговариваем. Не чтобы что-то доказать — просто чтобы быть рядом.
+      </p>
+      <p>
+        Если этого не будет — мне придётся смириться. Но я не мог не сказать.
+      </p>
+    </div>
+
+    <div class="date-card">
+      <p class="day">13 марта 2026</p>
+      <p class="detail">вечер • кафе</p>
+      <p class="detail">Если захочешь — я буду там</p>
+    </div>
+
+    <div class="block">
+      <h2>Почему этот сайт</h2>
+      <p>
+        Хотел сказать это не в сообщении и не голосовым. По-настоящему. Чтобы ты могла прочитать спокойно и решить — без обязательств, без давления.
+      </p>
+      <p>
+        Ты не обязана отвечать. Не обязана прийти. Но если когда-нибудь захочешь один кофе — приглашение открыто.
+      </p>
+    </div>
+
+    <div class="cta-wrap">
+      <a class="cta" href="https://wa.me/7XXXXXXXXXX">Написать (WhatsApp)</a>
+    </div>
+
+    <p class="foot-note">
+      Твой выбор. Всегда.
+    </p>
+  </main>
+
+</body>
+</html>
